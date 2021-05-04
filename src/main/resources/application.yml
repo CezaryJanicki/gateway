@@ -4,8 +4,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone=http://localhost:8761/eureka/:
-
 spring:
+  application:
+    name: gateway-service
   cloud:
     gateway:
       discovery:
@@ -13,4 +14,9 @@ spring:
           enabled: true
           lowerCaseServiceId: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
